@@ -32,9 +32,26 @@ var OrderRepository = function (config) {
 
     this.updateOrder = function (order, callback) {
 
-    }
+    };
 
-    this.deleteOrder = function (order, callback) {
+    this.deleteOrder = function (id, callback) {
+        $.ajax({
+            url: config.apiBaseUrl + "/Orders/" + id,
+            type: "DELETE",
+            success: function (data) {
+                console.log(data);
+                if (callback) callback(data);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(textStatus + " " + errorThrown);
+            }
+        });
+    };
 
-    }
+
+    this.resetData = function (callback) {
+        $.get(config.apiBaseUrl + "/Orders/Reset", function(data) {
+            callback(data);
+        });
+    };
 };
