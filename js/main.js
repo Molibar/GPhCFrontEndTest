@@ -4,7 +4,7 @@ var config = {
 };
 var orderRepository = new OrderRepository(config);
 
-var updateOrders = function() {
+var populateOrders = function() {
     orderRepository.getOrders(function (data) {
 
         $.get('js/templates/orders.hbs', function (templateScript) {
@@ -14,7 +14,7 @@ var updateOrders = function() {
                 .bind("click", function (event) {
                     var jqEl = $(event.target);
                     var altId = jqEl.attr("data-id");
-                    orderRepository.deleteOrder(altId, updateOrders);
+                    orderRepository.deleteOrder(altId, populateOrders);
                 });
         }, 'html')
     });
@@ -30,7 +30,7 @@ var resetData = function() {
                 .bind("click", function (event) {
                     var jqEl = $(event.target);
                     var altId = jqEl.attr("data-id");
-                    orderRepository.deleteOrder(altId, updateOrders);
+                    orderRepository.deleteOrder(altId, populateOrders);
                 });
         }, 'html')
     });
@@ -38,8 +38,8 @@ var resetData = function() {
 
 $("#reset-data")
     .bind("click", function (event) {
-        orderRepository.resetData(updateOrders);
+        orderRepository.resetData(populateOrders);
     });
 
 
-updateOrders();
+populateOrders();
