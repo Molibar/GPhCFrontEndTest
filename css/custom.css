@@ -1,0 +1,82 @@
+/*
+ * Karen Grigoryan
+ */
+ 
+ 
+ /*========GLOBAL========*/
+ body{
+background: #eee;
+ }
+ 
+.main {
+    width: 900px;
+    background: #fff;
+    margin: 0 auto;
+	padding:20px;
+}
+
+/*Form*/
+[type=reset],
+[type=submit], 
+button, 
+[type=button] {
+    -webkit-appearance: button;
+}
+
+.btn{
+	background-color:gray;
+	border:none;
+	padding:10px 15px;
+	color:#fff;
+}
+
+.btn:hover{
+	background:#22749E;
+	
+}
+
+.delete-order-button{
+background-color: #961C02;
+}
+
+#reset-data{
+	background-color:#bbbb0c;
+}
+
+/*========TYPOGRAPHY========*/
+h1,h2,h3,h4{
+	margin-top:20px;
+}
+
+h2{
+	font-weigh:normal!important;
+}
+	
+
+/*========MAIN=========*/
+/*Orders*/
+table#orders{
+	width:100%;
+}
+
+table#orders tr td{
+	padding:15px;
+	
+}
+
+table#orders thead tr td{
+	background-color:#e5e5ea;
+}
+
+/*table#orders #orders-body tr:nth-child(odd) td{
+	border-bottom:1px solid #333;
+	
+}*/
+
+table#orders #orders-body tr td{
+	border-bottom:1px solid #e5e5ea;
+}
+
+table#orders #orders-body tr td:last-child{
+	text-align:right;
+}
