@@ -12,18 +12,20 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
 
         <p>Orders</p>
 
-        <table id="orders">
+        <table id="orders" class='table'>
             <thead>
                 <tr>
                     <td width="30">ID</td>
                     <td width="200">Buyer</td>
                     <td width="100">Created Date</td>
+                    <td width="300">Orders</td>
                     <td width="30"></td>
                 </tr>
             </thead>
@@ -41,11 +43,47 @@
         </table>
 
         <p>If you have deleted all products, or made other changes, and want to return to the starting point click below.</p>
-        <p><button id="reset-data">Reset Data</button></p>
+        <p><button id="reset-data" class="btn btn-default">Reset Data</button></p>
+        <!--<p><button id="add-data" class="btn btn-default">Add Record</button></p>-->
 
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addDataForm">
+  Add record
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="addDataForm" tabindex="-1" role="dialog" aria-labelledby="addDataTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addDataTitle">Add new record</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+  <div class="form-group">
+    <label for="buyer-name">Buyer name</label>
+    <input type="text" class="form-control" id="buyer-name" placeholder="Enter buyer name">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Orders</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/OrderRepository.js"></script>
         <script src="js/main.js"></script>

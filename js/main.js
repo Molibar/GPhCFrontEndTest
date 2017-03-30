@@ -6,7 +6,14 @@ var orderRepository = new OrderRepository(config);
 
 var populateOrders = function() {
     orderRepository.getOrders(function (data) {
-
+var total = 0;
+total = data.reduce(function(prev, next){
+    var fn = function(prev, next){
+        return prev.Price + next.Price;
+    };
+    return prev.OrderLines.reduce(fn) + next.OrderLines.reduce(fn);
+});
+console.log(total);
         $.get('js/templates/orders.hbs', function (templateScript) {
             var template = Handlebars.compile(templateScript);
             $("#orders-body").html(template(data));
@@ -41,5 +48,9 @@ $("#reset-data")
         orderRepository.resetData(populateOrders);
     });
 
+
+$('#add-data').bind('click', function(event){
+
+})
 
 populateOrders();
