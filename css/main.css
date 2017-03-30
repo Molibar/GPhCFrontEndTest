@@ -95,9 +95,24 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+table {
+	width: 100%;
+}
+caption, th {
+	text-align: left;
+}
+td, th {
+	padding: 0 5px;
+}
 
+.c-order {}
+.c-order__id {
+	
+}
 
-
+.u-number {
+	text-align: right;	
+}
 
 
 

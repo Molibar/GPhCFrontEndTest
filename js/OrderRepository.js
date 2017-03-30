@@ -9,6 +9,12 @@ var OrderRepository = function (config) {
     this.getOrders = function (callback) {
         $.get(config.apiBaseUrl + "/Orders", function(data) {
             console.log(data);
+
+			for (order in data) {
+				// Format Date
+				data[order].CreatedDate = moment(data[order].CreatedDate).format("Do MMMM YYYY @ HH:mm:ss");
+			}
+			
             callback(data);
         });
     };

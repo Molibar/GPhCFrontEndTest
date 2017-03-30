@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en-GB">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -16,15 +16,16 @@
     </head>
     <body>
 
-        <p>Orders</p>
-
         <table id="orders">
+			<caption>
+				<h1>Orders</h1>
+			</caption>
             <thead>
                 <tr>
-                    <td width="30">ID</td>
-                    <td width="200">Buyer</td>
-                    <td width="100">Created Date</td>
-                    <td width="30"></td>
+                    <th class="u-number">ID</th>
+                    <th>Buyer</th>
+                    <th>Created Date</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody id="orders-body">
@@ -49,6 +50,6 @@
         <script src="js/plugins.js"></script>
         <script src="js/OrderRepository.js"></script>
         <script src="js/main.js"></script>
-
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     </body>
 </html>
